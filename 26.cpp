@@ -1,0 +1,55 @@
+/***********************************************************************
+* Program:
+*    Assignment ##, ????          (e.g. Assignment 10, Hello World)
+*    Brother {Cook, Comeau, Falin, Lilya, Honeycutt, Unsicker, Peterson, Phair, Ellsworth}, CS124
+* Author:
+*    your name
+* Summary: 
+*    Enter a brief description of your program here!  Please note that if
+*    you do not take the time to fill out this block, YOU WILL LOSE POINTS.
+*    Before you begin working, estimate the time you think it will
+*    take you to do the assignment and include it in this header block.
+*    Before you submit the assignment include the actual time it took.
+*
+*    Estimated:  0.0 hrs   
+*    Actual:     0.0 hrs
+*      Please describe briefly what was the most difficult part.
+************************************************************************/
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+ofstream fout;
+/**********************************************************************
+ * Add text here to describe what the function "main" does. Also don't forget
+ * to fill this out with meaningful text or YOU WILL LOSE POINTS.
+ ***********************************************************************/
+void getFileName(char fileName[])
+{
+   
+   int i = 0;
+   float sum = 0;
+   float grades = 0;
+   cout << "Please enter the filename: ";
+   cin >> fileName;
+   ifstream fin(fileName);
+   while (fin >> grades)
+      {
+         sum += grades;
+         i++;
+      }
+   if ( i != 10 )
+      cout << "Error reading file \"" << fileName << "\"\n";
+   else
+      cout << "Average Grade: " << (sum / 10) << "%\n";
+}
+
+int main()
+{
+   cout.setf(ios::fixed);
+   cout.precision(0);
+   char fileName[256];
+   getFileName(fileName);
+   return 0;
+}

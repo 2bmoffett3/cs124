@@ -1,0 +1,40 @@
+#include<iostream>
+
+using namespace std;
+
+bool GPAA(double GPA)
+{
+   if ( GPA <=0 )
+   {
+      return false;
+   }
+   if (GPA <= 4.0)
+   { return true;
+   }
+   else
+   {
+      return false;
+   }
+}
+
+
+int main()
+ {
+    cout.setf(ios::fixed);
+    cout.precision(2);
+
+
+    double GPA;
+cout << "Please enter your GPA: ";
+cin >> GPA;
+if (GPAA(GPA))
+{
+   cout << "Your GPA is in the valid range.\n";
+}
+   else 
+   {
+      cout << "Your GPA is not in the valid range.\n";
+   }
+      return 0;
+ }
+
